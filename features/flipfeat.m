@@ -22,10 +22,12 @@ function f = flipfeat(f)
 % your project.
 % -------------------------------------------------------
 
-% flip permutation
-p = [10  9  8  7  6  5  4  3  2 ... % 1st set of contrast sensitive features
-      1 18 17 16 15 14 13 12 11 ... % 2nd set of contrast sensitive features
-     19 27 26 25 24 23 22 21 20 ... % Contrast insensitive features
-     30 31 28 29 ...                % Gradient/texture energy features
-     32];                           % Boundary truncation feature
-f = f(:,end:-1:1,p);
+% % flip permutation
+% p = [10  9  8  7  6  5  4  3  2 ... % 1st set of contrast sensitive features
+%       1 18 17 16 15 14 13 12 11 ... % 2nd set of contrast sensitive features
+%      19 27 26 25 24 23 22 21 20 ... % Contrast insensitive features
+%      30 31 28 29 ...                % Gradient/texture energy features
+%      32];                           % Boundary truncation feature
+% f = f(:,end:-1:1,p);
+
+f = f(:,end:-1:1,:);

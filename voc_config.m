@@ -212,8 +212,10 @@ conf.pascal.VOCopts.testset = conf.eval.test_set;
 % Feature configuration 
 % -------------------------------------------------------------------
 conf = cv(conf, 'features.sbin', 8);
-conf = cv(conf, 'features.dim', 32);
-conf = cv(conf, 'features.truncation_dim', 32);
+% conf = cv(conf, 'features.dim', 32);
+% conf = cv(conf, 'features.truncation_dim', 32);
+conf = cv(conf, 'features.dim', 99);
+conf = cv(conf, 'features.truncation_dim', 99);
 conf = cv(conf, 'features.extra_octave', false);
 
 
