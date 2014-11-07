@@ -7,7 +7,7 @@ persistent centers;
 
 if isempty(centers)
     % load centers
-    v = load('./zxk/ped_centers_w100_a0_sig001_20141030','centers');
+    v = load('./zxk/ped_centers_w100_a0_sig001_20141104','centers');
     centers = v.centers;
 end
 
@@ -25,7 +25,7 @@ img.height = size(I, 1);
 img.contour = contour;
 img = imgAddSeg(img);
 img = imgAddHH(img);
-img = imgAddSigma(img);
+% img = imgAddSigma(img);
 
 nc = floor(img.width/binSize);
 nr = floor(img.height/binSize);
