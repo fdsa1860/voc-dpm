@@ -7,7 +7,7 @@ persistent centers;
 
 if isempty(centers)
     % load centers
-    v = load('./zxk/ped_centers_w100_a0_sig001_20141104','centers');
+    v = load('./zxk/ped_centers_w100_a0_sig001_20141030','centers');
     centers = v.centers;
 end
 
