@@ -36,6 +36,6 @@ block = genBlock([1 1 img.width img.height], nc, nr);
 
 feat = single(feat);
 
-feat = cat(3,feat2,feat(1:end-2,1:end-2,:));
+feat = cat(3,feat2,feat(1:size(feat2,1),1:size(feat2,2),:));
 
 end
