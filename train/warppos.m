@@ -32,8 +32,8 @@ heights = [pos(:).y2]' - [pos(:).y1]' + 1;
 widths = [pos(:).x2]' - [pos(:).x1]' + 1;
 numpos = length(pos);
 warped = cell(numpos, 1);
-% cropsize = (fsize+2) * model.sbin;
-cropsize = fsize * model.sbin;
+cropsize = (fsize+2) * model.sbin;
+% cropsize = fsize * model.sbin;
 parfor i = 1:numpos
   fprintf('%s %s: warp: %d/%d\n', ...
           procid(), model.class, i, numpos)

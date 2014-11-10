@@ -1,13 +1,15 @@
 % function feat = img2feat_fast(I,nBins)
 function feat = features(I,binSize)
 
+feat2 = features2(I,binSize);
+
 I = I/255;
 
 persistent centers;
 
 if isempty(centers)
     % load centers
-    v = load('./zxk/ped_centers_w100_a0_sig001_20141030','centers');
+    v = load('./zxk/ped_centers_w100_a0_sig001_20141104','centers');
     centers = v.centers;
 end
 
@@ -33,5 +35,7 @@ block = genBlock([1 1 img.width img.height], nc, nr);
 [feat, ind] = structureBowFeatHHSigma(img.seg, centers, opt.alpha, block, nc, nr);
 
 feat = single(feat);
+
+feat = cat(3,feat2,feat(1:end-2,1:end-2,:));
 
 end
