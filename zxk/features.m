@@ -1,6 +1,8 @@
 % function feat = img2feat_fast(I,nBins)
 function feat = features(I,binSize)
 
+feat2 = features2(I,binSize);
+
 I = I/255;
 
 persistent centers;
@@ -33,5 +35,7 @@ block = genBlock([1 1 img.width img.height], nc, nr);
 [feat, ind] = structureBowFeatHHSigma(img.seg, centers, opt.alpha, block, nc, nr);
 
 feat = single(feat);
+
+feat = cat(3,feat2,feat(1:size(feat2,1),1:size(feat2,2),:));
 
 end
