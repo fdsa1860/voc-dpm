@@ -40,7 +40,7 @@ end
 contour = extractContBW_fast(BW, E);
 
 if draw
-    showContours(contour, length(contour), 1:length(contour));
+    showContours(contour);
 %     showContours(contour2, length(contour2), 1:length(contour2));
 end
 
