@@ -14,10 +14,9 @@ if isempty(centers)
 end
 
 % parameters
-opt.hankel_size = 4;
+opt.hankel_size = 7;
 opt.alpha = 0;
 opt.hankel_mode = 1;
-% opt.nBins = 9;
 opt.minLen = 2 * opt.hankel_size + 2;
 
 contour = img2contour_fast(I);
@@ -31,8 +30,8 @@ img = imgAddHH(img);
 
 nc = floor(img.width/binSize);
 nr = floor(img.height/binSize);
-block = genBlock([1 1 img.width img.height], nc, nr);
-[feat, ind] = structureBowFeatHHSigma(img.seg, centers, opt.alpha, block, nc, nr);
+cells = genCells([1 1 img.width img.height], nc, nr);
+[feat, ind] = structureBowFeatHHSigma(img.seg, centers, opt.alpha, cells);
 
 feat = single(feat);
 
