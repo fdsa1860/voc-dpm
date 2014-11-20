@@ -213,7 +213,7 @@ conf.pascal.VOCopts.testset = conf.eval.test_set;
 % -------------------------------------------------------------------
 conf = cv(conf, 'features.sbin', 8);
 % conf = cv(conf, 'features.dim', 32);
-conf = cv(conf, 'features.dim', 132);
+conf = cv(conf, 'features.dim', 432);
 conf = cv(conf, 'features.truncation_dim', 32);
 conf = cv(conf, 'features.extra_octave', false);
 

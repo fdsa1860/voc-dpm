@@ -17,9 +17,10 @@ nCells = cells.num;
 bbox = cells.bbox;
 nc = cells.nc;
 nr = cells.nr;
-dim = 4*(nr-1)*(nc-1)*k;
+% dim = 4*(nr-1)*(nc-1)*k;
 
-feat = zeros(dim, 1);
+% feat = zeros(dim, 1);
+feat = zeros(nr, nc, k);
 ind = [];
 
 if isempty(X),
@@ -58,7 +59,9 @@ for q = 1:nCells
 
 end
 
-feat = mexBlockNormalization_cellwise(single(feat_cell));
 % feat = blockNormalization_cellwise(feat_cell);
+feat = mexBlockNormalization_cellwise(single(feat_cell));
+% feat_block = blockNormalization(feat_cell);
+% feat = feat_block(:);
 
 end

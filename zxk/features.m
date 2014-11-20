@@ -28,9 +28,10 @@ img = imgAddSeg(img);
 img = imgAddHH(img);
 % img = imgAddSigma(img);
 
-nc = floor(img.width/binSize);
-nr = floor(img.height/binSize);
-cells = genCells([1 1 img.width img.height], nc, nr);
+% nc = floor(img.width/binSize);
+% nr = floor(img.height/binSize);
+% cells = genCells([1 1 img.width img.height], nc, nr);
+cells = genCells([1 1 img.width img.height], binSize);
 [feat, ind] = structureBowFeatHHSigma(img.seg, centers, opt.alpha, cells);
 
 feat = single(feat);
