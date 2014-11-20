@@ -16,28 +16,28 @@ norm_feat = zeros(nr-2, nc-2, 4*nk);
 for i = 2:nr-1
     for j = 2:nc-1
         f1 = feat(i-1:i, j-1:j, :);
-        n1 = sqrt(sum(sum(f1.^2,1),2)) + 1e-4;
-        tmp = feat(i, j, :) ./ n1;
+        n1 = norm(f1(:)) + 1e-4;
+        tmp = feat(i, j, :) / n1;
         tmp(tmp>0.2) = 0.2;
-        norm_feat(i-1, j-1, 1:nk) = tmp;
+        norm_feat(i-1, j-1, 1:4:end) = tmp;
         
         f2 = feat(i-1:i, j:j+1, :);
-        n2 = sqrt(sum(sum(f2.^2,1),2)) + 1e-4;
-        tmp = feat(i, j, :) ./ n2;
+        n2 = norm(f2(:)) + 1e-4;
+        tmp = feat(i, j, :) / n2;
         tmp(tmp>0.2) = 0.2;
-        norm_feat(i-1, j-1, nk+1:2*nk) = tmp;
+        norm_feat(i-1, j-1, 2:4:end) = tmp;
         
         f3 = feat(i:i+1, j-1:j, :);
-        n3 = sqrt(sum(sum(f3.^2,1),2)) + 1e-4;
-        tmp = feat(i, j, :) ./ n3;
+        n3 = norm(f3(:)) + 1e-4;
+        tmp = feat(i, j, :) / n3;
         tmp(tmp>0.2) = 0.2;
-        norm_feat(i-1, j-1, 2*nk+1:3*nk) = tmp;
+        norm_feat(i-1, j-1, 3:4:end) = tmp;
         
         f4 = feat(i:i+1, j:j+1, :);
-        n4 = sqrt(sum(sum(f4.^2,1),2)) + 1e-4;
-        tmp = feat(i, j, :) ./ n4;
+        n4 = norm(f4(:)) + 1e-4;
+        tmp = feat(i, j, :) / n4;
         tmp(tmp>0.2) = 0.2;
-        norm_feat(i-1, j-1, 3*nk+1:4*nk) = tmp;
+        norm_feat(i-1, j-1, 4:4:end) = tmp;
     end
 end
 
