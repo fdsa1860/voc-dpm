@@ -58,9 +58,7 @@ for q = 1:nCells
 
 end
 
-feat = blockNormalization_cellwise(feat_cell);
-feat1 = mexBlockNormalization_cellwise(single(feat_cell));
-% feat_block = blockNormalization(feat_cell);
-% feat = feat_block(:);
-1
+feat = mexBlockNormalization_cellwise(single(feat_cell));
+% feat = blockNormalization_cellwise(feat_cell);
+
 end
