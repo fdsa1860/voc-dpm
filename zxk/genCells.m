@@ -20,7 +20,7 @@ nr = round(height/sbin);
 bbox = zeros(nr*nc, 4);
 for i = 1:nr
     for j = 1:nc
-        bbox((i-1)*nc+j, :) = [(j-1)*sbin+1 (i-1)*sbin+1, ...
+        bbox((i-1)*nc+j, :) = [(j-1)*sbin+1, (i-1)*sbin+1, ...
             min(j*sbin,width), min(i*sbin,height)];
     end
 end
