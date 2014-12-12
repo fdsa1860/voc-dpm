@@ -20,7 +20,7 @@ nr = cells.nr;
 % dim = 4*(nr-1)*(nc-1)*k;
 
 % feat = zeros(dim, 1);
-feat = zeros(nr, nc, 4*k);
+feat = zeros(nr-2, nc-2, 4*k);
 ind = [];
 
 if isempty(X),
